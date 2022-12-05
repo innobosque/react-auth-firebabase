@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas sobre el componente DialogBox Se debe hacer un match con el snapshot del componente 1`] = `
+<div>
+  <div
+    class="dialog-box my-2 p-2 text-white bg-red-300 rounded"
+    data-testid="dialog-box"
+    role="alert"
+  >
+    Hi Xurxo
+  </div>
+</div>
+`;

@@ -1,8 +1,13 @@
 import PropTypes from 'prop-types';
 
-export const DialogBox = ({message}) => {
+export const DialogBox = ({ message }) => {
   return (
-    <div className="my-2 p-2 text-white bg-red-300 rounded">{message}</div>
+    <div
+      data-testid="dialog-box"
+      className="dialog-box my-2 p-2 text-white bg-red-300 rounded"
+      role="alert">
+      {message}
+    </div>
   )
 }
 
