@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth, onSignOut, signInWithEmailPassword } from "../helpers";
+import { auth, onSignOut, signInWithEmailPassword } from "../firebase";
 export const useUser = () => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -9,21 +9,25 @@ export const useUser = () => {
 
 
     const handleSignInWithEmailPassword = async (email = 'homegoma@hotmail.com', password = '123456') => {
+        setError(null);
         try {
             setLoading(true);
             const tmp = await signInWithEmailPassword(email, password);
             setUser(tmp.user);
-            setLoading(false);
-
+            
         } catch (err) {
             setError({
                 code: err.code,
                 message: err.message,
             })
+        } finally{
+            setLoading(false);
+
         }
     }
 
     const handleSignOut = async () => {
+        setError(null);
         try {
             await onSignOut();
             setUser(null);

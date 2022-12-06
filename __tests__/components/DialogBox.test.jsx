@@ -1,7 +1,7 @@
 import { render,screen } from "@testing-library/react";
 import { DialogBox } from "../../src/components/DialogBox";
 
-describe('Pruebas sobre el componente DialogBox', () => {
+describe('Pruebas sobre <DialogBox/ >', () => {
   const message = "Hi Xurxo";
 
   test("Se debe hacer un match con el snapshot del componente",()=>{
@@ -24,6 +24,14 @@ describe('Pruebas sobre el componente DialogBox', () => {
     expect(label).toBeTruthy();
     expect(label.nodeName).toBe("DIV");
   });
+
+  test('Debe existir el atributo role y su valor poner "alert"',()=>{
+    render(<DialogBox message="" />);
+    // const role = screen.getByRole('alert');
+    // console.log(role.getAttribute('role'))
+    expect(screen.getByRole('alert')).toBeTruthy();
+    
+  })
 
  
 
