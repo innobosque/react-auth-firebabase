@@ -9,21 +9,25 @@ export const useUser = () => {
 
 
     const handleSignInWithEmailPassword = async (email = 'homegoma@hotmail.com', password = '123456') => {
+        setError(null);
         try {
             setLoading(true);
             const tmp = await signInWithEmailPassword(email, password);
             setUser(tmp.user);
-            setLoading(false);
-
+            
         } catch (err) {
             setError({
                 code: err.code,
                 message: err.message,
             })
+        } finally{
+            setLoading(false);
+
         }
     }
 
     const handleSignOut = async () => {
+        setError(null);
         try {
             await onSignOut();
             setUser(null);
