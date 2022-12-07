@@ -30,7 +30,11 @@ export const BtnGroup = ({ userBool, loading, handleSignInWithEmailPassword, han
                     {loading ? <span role="alert">Cargando...</span> : 'Acceso'}
                 </button>
                 <button
+<<<<<<< HEAD
                 onClick={handleResetForm}
+=======
+                onClick={()=>{handleResetForm()}}
+>>>>>>> 71f1290f4a4079f0a0adbf9eab107138d5fd2228
                 className="bg-slate-700 hover:bg-slate-900 text-white font-bold ml-2 py-2 px-4 rounded">
                     Reseteo
                 </button>
