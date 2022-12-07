@@ -3,7 +3,7 @@ import { useUser } from "./hooks/useUser";
 
 const App = () => {
 
-    console.log('estado');
+    //console.log('estado');
     const {
         user,
         loading,

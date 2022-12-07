@@ -1,7 +1,7 @@
 import { useForm } from "../"
 
 export const BtnGroup = ({ userBool, loading, handleSignInWithEmailPassword, handleSignOut }) => {
-    const {onInputChange,email,password} = useForm({
+    const {handleInputChange,email,password} = useForm({
         email: '',
         password: '',
     });
@@ -13,13 +13,13 @@ export const BtnGroup = ({ userBool, loading, handleSignInWithEmailPassword, han
                 <input
                 className="block w-full my-2 px-2 py-1 rounded" 
                 name="email"
-                onChange={onInputChange}
+                onChange={handleInputChange}
                 value={email}
                 type="text" placeholder="Su correo" />
                 <input
                 className="block w-full my-2 px-2 py-1 rounded"
                 name="password"
-                onChange={onInputChange}
+                onChange={handleInputChange}
                 value={password}
                  type="password" placeholder="Su contraseña" />
                 <button
