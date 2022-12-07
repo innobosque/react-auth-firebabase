@@ -1,4 +1,4 @@
-import { useForm } from "../hooks/useForms"
+import { useForm } from "../"
 
 export const BtnGroup = ({ userBool, loading, handleSignInWithEmailPassword, handleSignOut }) => {
     const {onInputChange,email,password} = useForm({
